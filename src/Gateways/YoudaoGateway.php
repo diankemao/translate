@@ -88,6 +88,14 @@ class YoudaoGateway implements Translation
 				$msg = '翻译账户已经欠费，请进行账户充值';
 			} else if ($res['errorCode'] === '1412') {
 				$msg = '翻译超过最大识别字节数';
+			} else if ($res['errorCode'] === '103') {
+				$msg = '翻译文本过长, 超出字数限制';
+			} else if ($res['errorCode'] === '112') {
+				$msg = '翻译请求服务无效';
+			} else if ($res['errorCode'] === '111') {
+				$msg = '翻译开发者账号无效';
+			} else if ($res['errorCode'] === '113') {
+				$msg = '翻译文本不能为空';
 			}
             throw new GatewayException(
                 $msg . ', error code: ' . $res['errorCode'],

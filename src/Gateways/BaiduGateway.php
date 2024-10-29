@@ -80,7 +80,7 @@ class BaiduGateway implements Translation
 
         if (isset($res['error_code']) && $res['error_code'] !== '52000') {
             throw new GatewayException(
-                'get result error:' . $res['error_msg'],
+                'Translation error: ' . $res['error_msg'],
                 $res['error_code'],
                 $res
             );
